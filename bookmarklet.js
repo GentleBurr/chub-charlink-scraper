@@ -1,0 +1,1 @@
+javascript:(function(){fetch('[https://raw.githubusercontent.com/GentleBurr/chub-charlink-scraper/main/scraper.user.js').then(r=](https://raw.githubusercontent.com/GentleBurr/chub-charlink-scraper/main/scraper.user.js').then(r=)>r.text()).then(t=>{var s=document.createElement('script');s.text=t;document.body.appendChild(s)})})();
