@@ -1,4 +1,4 @@
-# 📦 Chub.ai Character Link Mass Scraper (v1.1.0)
+# 📦 Chub.ai Character Link Mass Scraper (v1.2.0)
 
 A lightweight, bulletproof tool to bulk-scrape character links from Chub.ai and instantly import them into SillyTavern by simply copying and pasting. Built from the ground up to survive strict mobile browser security, and now fully universal—run it as a sleek mobile Bookmarklet or a native desktop Userscript!
 
@@ -6,12 +6,12 @@ A lightweight, bulletproof tool to bulk-scrape character links from Chub.ai and 
 * **📱 Universal Support:** Works flawlessly via Bookmarklet on Android (Firefox, Chrome, Edge), iOS Safari and Windows OR natively via Tampermonkey/Violentmonkey on Desktop or Mobile Extension!
 * **🔄 Auto-Updating:** The mobile Injector Bookmarklet and Monkey-Script fetch the live upgrades directly from GitHub. You never have to manually update your mobile bookmark again.
 * **🛡️ Flexbox Armor:** The floating UI panel perfectly adapts to device rotations and virtual keyboards without clipping off-screen.
-* **🕵️‍♂️ Guest Detection:** The UI automatically adjusts its position to avoid overlapping site elements, regardless of whether you are logged in or browsing as a guest.
-* **📜 Smart Auto-Scroll:** As your list of scraped creators grows, the panel intelligently auto-scrolls with a subtle "peek" effect so your important action buttons are always in view.
 * **🕹️ Draggable UI:** Press and drag the top header to move the panel anywhere on your screen. Expand (`➕`) or collapse (`➖`) the panel to save screen space.
-* **🎯 Smart Whitelisting & Duplicate Catcher:** Add specific creators to your "Approved" list. The scraper only grabs their links and automatically filters out duplicates.
+* **🎯 Target Mode (Sniper):** Click the `🎯` button to manually snipe a single character card right from the feed without triggering page navigation.
+* **⚙️ Advanced Tag Filtering:** Set specific "Should Include" (OR) and "Must Exclude" (AND) tags to dynamically filter out unwanted cards before they ever reach your list.
+* **🧠 Smart Whitelisting & Dynamic Editing:** Add specific creators to your "Approved" list. The scraper only grabs their links and automatically filters out duplicates. Easily remove them later using interactive `×` UI tags.
 * **💾 Persistent Memory:** The script remembers your scraped links even if you refresh the page or navigate to Page 2, 3, etc.
-* **⚡ 1-Click Export:** Generates a clean text box of URLs with a native "Copy" button, ready to be pasted directly into SillyTavern.
+* **⚡ Advanced Exporting:** Generate a clean text box of URLs to copy natively, download them directly as a `.txt` file, and utilize "Auto-clear" features to seamlessly manage consecutive scraping sessions.
 
 ---
 
@@ -54,12 +54,12 @@ On Android, tapping scripts from a bookmarks menu can sometimes be blocked. The 
 ---
 
 ### 🛠️ The Scraping Workflow
-1. **Authorize the Creator(s):** Once the panel is open on a creator's profile page, tap `+ Add Current Creator`.
-2. **Scrape:** Tap `+ Scrape This Page`. The script will harvest all valid character links on your screen.
+1. **Authorize the Creator(s):** Once the panel is open on a creator's profile page, tap `+ Add Creator`.
+2. **Scrape:** Tap `+ Scrape Page`. The script will harvest all valid character links on your screen.
 3. **Turn the Page:** Use Chub's site navigation to go to Page 2, 3, etc. *(If the panel disappears when the new page loads, just launch the bookmarklet again—it remembers your saved links as long as the tab hasn't been completely closed!)*
-4. **Expand the Hunt (Optional):** Repeat steps 1-3 for any creators you like. As long as a creator is whitelisted, you can scrape their bots from the Trending Page, the Search, or anywhere else on Chub!
+4. **Expand the Hunt (Optional):** Repeat steps 1-3 for any creators you like. As long as a creator is whitelisted, you can scrape their bots from the Trending Page, the Search, or anywhere else on Chub! You can also use Target Mode (`🎯`) to grab single cards on the fly.
 5. **Export:** When you are done hoarding, tap `Show Links`.
-6. **Copy & Close:** Tap the `Copy` button on the popup (it will light up green if successful). Afterward, you can shut down the script completely by pressing the red `Exit` button, or press `Back` to close the popup and keep scraping.
+6. **Copy & Close:** Tap the `Copy` button on the popup (it will light up green if successful). Afterward, you can shut down the script completely by pressing the red `❌` button, or press `Back` to close the popup and keep scraping.
 
 ---
 
@@ -74,11 +74,11 @@ On Android, tapping scripts from a bookmarks menu can sometimes be blocked. The 
 ### 🗺️ Roadmap & Upcoming Features
 I am actively working to expand the capabilities of this tool. Planned updates include:
 * **Multi-Site Support:** Expanding the scraper's reach to seamlessly pull links from other popular character hubs.
-* **Advanced Tag Filtering:** Giving you the ability to filter out specific tags before scraping.
+* ~~**Advanced Tag Filtering:** Giving you the ability to filter out specific tags before scraping.~~
 * **Date Filtering:** Only scrape characters added within a specific timeframe.
-* **List Management & Auto-Clear:** Streamlining consecutive scraping sessions by adding a dedicated "Clear Links" button, or an option to automatically flush your saved list upon a successful copy.
-* **Dynamic Whitelist Editing:** Giving you the power to remove specific creators from your active whitelist on the fly, complete with a smart prompt asking whether to keep or purge their already-scraped links.
-* **Direct .txt File Export:** Bypassing mobile clipboard size limits entirely by adding a button to download your massive link lists directly as a clean text file.
+* ~~**List Management & Auto-Clear:** Streamlining consecutive scraping sessions by adding a dedicated "Clear Links" button, or an option to automatically flush your saved list upon a successful copy.~~
+* ~~**Dynamic Whitelist Editing:** Giving you the power to remove specific creators from your active whitelist on the fly, complete with a smart prompt asking whether to keep or purge their already-scraped links.~~
+* ~~**Direct .txt File Export:** Bypassing mobile clipboard size limits entirely by adding a button to download your massive link lists directly as a clean text file.~~
 * **Granular Scrape Stats:** Adding visual counters next to the creators' names in the UI so you can see exactly how many links were harvested from each specific author.
 
 *(Want to test the newest features before anyone else? Check out the **[CHANGELOG.md](https://github.com/GentleBurr/chub-charlink-scraper/blob/main/CHANGELOG.md)** for instructions on how to install the Bleeding Edge Dev Build! **Caution**: very unstable and might not work from time to time!)*
