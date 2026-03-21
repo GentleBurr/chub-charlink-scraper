@@ -138,3 +138,45 @@ The guest detector failed on the initial welcome splash screen because the butto
 > *The Fix:* Expanded the DOM scanner's vocabulary to check for both strings, ensuring perfect bottom alignment across all pages regardless of authentication state.
 
 • **v1.1.0 (The Universal Release):** *The Culmination:* Added `@updateURL` and `@downloadURL` tags, finalizing the transition into a true hybrid tool. It now runs flawlessly via Injector Bookmarklets on mobile browsers and seamlessly installs as a native, auto-updating script via Tampermonkey/Violentmonkey on desktop. Survived the final Gauntlet: virtual keyboard squishing, SPA phantom navigation, and extreme desktop window scaling.
+
+### 🎯 Phase 11: Interactive UX & The Sniper Mode
+
+• v1.1.1 & v1.1.2 (The Dynamic Whitelist): Replaced the static, plain-text creator list with interactive, styled UI tags. Users can now cleanly manage their active scrapers by tapping a red × button on individual creators.
+
+• v1.1.3 – v1.1.7 (The Adware Dilemma): Attempted to implement a dual-action removal system that would delete a creator and purge their scraped links simultaneously via chained native browser popups.
+
+> The Bug: The chained confirm() boxes felt incredibly clunky, mimicking early-2000s malicious adware. Additionally, a copy-paste error caused a severe "bracket avalanche" that temporarily broke the entire closure scope of the UI function.
+
+>The Fix: Scrapped the double-popup entirely in favor of a fast, single-action removal prompt. Delegated link purging strictly to the Export Menu to keep the UX clean. Repaired the syntax structure.
+
+• v1.1.8 (The Sniper Mode): Built "Target Mode" (🎯). A feature allowing users to snipe single character cards directly from the feed without navigating to their profile pages.
+
+> The Bug: Chub's internal React/Next.js router was processing the clicks faster than the scraper could intercept them, causing the browser to load the character page anyway.
+
+>The Fix: Weaponized the JavaScript event listener by forcing it into the "Capture Phase" (true). This intercepts the click at the absolute root of the DOM, allowing the script to violently halt the page navigation (stopPropagation) before the website even knows a click happened.
+
+• v1.1.9 – v1.1.12 (The Pixel-Perfect Polish): The addition of the Target button squeezed the main UI, causing text to ugly-wrap.
+
+> The Fix: Deployed white-space: nowrap and precision inline padding to force the layout into compliance. Completely de-minified the Dev codebase for readability. Upgraded the Export menu by transforming the massive "Exit" text into a compact ❌ flexbox square, tightening button gaps, and fixing native browser baseline "droop" on the Auto-clear checkbox.
+
+### ⚙️ Phase 12: The Tag Engine & The Scunthorpe Bug
+
+• v1.1.13 (The Probe): Investigated how Chub renders character tags on mobile. Built a temporary external DOM-ripper script to prove that fully formatted tags are secretly passed to the device HTML, even if CSS visually truncates them with an ellipsis.
+
+• v1.1.14 (The Scunthorpe Problem): Engineered the Advanced Tag Filter (⚙️), injecting DOM-query logic into the scraping loop to conditionally accept or reject links based on their tags.
+
+>The Bug: The initial engine used indexOf substring matching. If a user set the Exclude filter to "Male", the script saw the word "Female", triggered the exclusion rule, and threw the female character cards in the trash.
+
+>The Fix: Upgraded the engine from raw string matching to strict array equality (===). Added -webkit-user-select: none across the entire UI to prevent the OS from annoyingly highlighting button text during long-presses.
+
+• v1.1.15 (The Logic Flip & The Stacker):
+
+>The Bug: Rapidly tapping UI menu buttons indiscriminately spawned infinite layers of modal windows on top of each other. Furthermore, the "Include" tag logic required a card to have every single tag the user typed (AND logic), which was too restrictive.
+
+>The Fix: Programmed a DOM-clearing strike (d.querySelector('.w').remove()) that dynamically destroys any open modal before rendering a new one. Transitioned the Include filter to flexible OR logic ("Should Include").
+
+### 👑 Phase 13: The v1.2.0 Masterpiece
+
+• v1.1.16 – v1.1.19 (The Dynamic Filter UI): Discarded the ugly textareas in the filter modal. Rebuilt it into a real-time, interactive tag-generator that instantly writes to sessionStorage. Centered the modal dynamically using CSS transforms. Neutralized OS-level emoji color clashing by stripping purple classes, forced light-mode text on the tags, and implemented 1px horizontal dividers to establish clear visual hierarchy between the Include and Exclude lists. Consolidated the header text using align-items: baseline to save critical vertical space.
+
+• v1.2.0 (The Stable Release): The Final Polish. Restructured the bottom-left footer to stack the "CharLinkScraper" branding and copyright text into two tight lines via flexbox, preventing the panel from physically growing. Fine-tuned the negative bottom margin (-8px) to perfectly counterbalance the master padding, achieving flawless 4px visual symmetry. Stripped out the dynamic version-fetching failsafe to optimize load times, hardcoding the version string, and officially locking in the v1.2.0 master release.
